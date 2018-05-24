@@ -8,9 +8,8 @@
   
   修改在django中默认的数据库访问MySQL。
   
-  关于Django1.6中DATABASES的设置不用做任何修改，跟MySQLdb一样，settings.py里的配置不变,但是要在项目目录下的__init__.py文件（webchat/webchat/ \_\_init\_\_.py）加入下面两句
-  
+  在项目目录下的__init__.py文件（webchat/webchat/ \_\_init\_\_.py）加入下面两句
+  ```
   1  import pymysql
-  
   2  pymysql.install_as_MySQLdb()
-  
+  ```
