@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://v3.bootcss.com/examples/non-responsive/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Note there is no responsive meta tag here -->
+
+    <link rel="icon" href="http://v3.bootcss.com/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/bootstrap/css/non-responsive.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/custom.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://v3.bootcss.com/examples/non-responsive/#">网络实习社区</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          {% block top-head %}
+          <ul class="nav navbar-nav">
+            {% for category in category_list %}
+              {% if category.id == category_obj.id %}
+                <li class="active"><a href="{% url 'category_detail'  category.id  %}">{{ category.name }}</a></li>
+              {% else %}
+                <li class=""><a href="{% url 'category_detail' category.id %}">{{ category.name }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          {% endblock %}
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </nav>
+
+    <div class="page-container">
+      {% block page-container %}
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <h2>your owner stuff</h2>
+        </div>
+      {% endblock %}
+    </div> <!-- /container -->
+    <footer class="footer">
+      sssss
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/bootstrap/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body></html>
