@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bbs',
 ]
 
 MIDDLEWARE = [
@@ -45,6 +46,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -79,12 +81,12 @@ DATABASES = {
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
     'default':{
-        'ENGINE':'django.db.backends.mysql',
-        'NAME':'my_bbs',
-        'HOST':'127.0.0.1',
-        'PORT':'3306',
-        'USER':'root',
-        'PASSWORD':'123456',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'my_bbs',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'USER': 'root',
     }
 }
 
@@ -128,6 +130,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
             os.path.join(BASE_DIR, "statics"),
-      #      os.path.join(BASE_DIR, "uploads"),
-            '/var/www/static',
+            os.path.join(BASE_DIR, "uploads"),
+            #'/var/www/static',
     ]
+
+LOGIN_URL = '/login/'
